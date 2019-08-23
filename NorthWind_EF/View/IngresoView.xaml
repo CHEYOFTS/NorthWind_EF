@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" BackgroundColor="#609d00"
+             x:Class="NorthWind_EF.View.IngresoView">
+    <NavigationPage.TitleView>
+        <Label Text="Registro de Productos" HorizontalTextAlignment="Center" FontAttributes="Bold" TextColor="White" 
+               FontSize="Large"/>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <StackLayout Padding="20,0,20,0">
+            <Label Text="&#10;"/>
+            <Label Text="Ingrese Una Categoria " HorizontalOptions="Center" FontSize="Medium"  
+                   TextColor="Yellow" FontAttributes="Italic" TextDecorations="Underline"/>
+            
+            <Entry Placeholder="Categoria" x:Name="EntryCategoria" TextColor="White" FontAttributes="Bold" 
+                   HorizontalTextAlignment="Center"/>
+            <Entry Placeholder="Descripcion &#10;" x:Name="EntryDescripcion" TextColor="White" FontAttributes="Bold" 
+                   HorizontalTextAlignment="Center"/>
+
+            <Label Text=" Datos "  HorizontalOptions="Center" FontSize="Medium" TextColor="Yellow" 
+                   TextDecorations="Underline" FontAttributes="Italic" />
+            
+            <Entry Placeholder="Product Name" x:Name="EntryProducto" TextColor="White" FontAttributes="Bold" 
+                   HorizontalTextAlignment="Center"/>
+            
+            <Button Text="ADD" x:Name="AddBtn" Clicked="AddBtn_Clicked" BackgroundColor="Green" 
+                    TextColor="White" CornerRadius="50"  HorizontalOptions="Center" FontAttributes="Bold"/>
+
+
+            <ListView x:Name="Productos">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding NombreProducto}">
+                        </TextCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <StackLayout HorizontalOptions="Center" VerticalOptions="Start" Orientation="Horizontal" Padding="50,0,50,10">
+                <Button Text="Ver" x:Name="VerBtn" Clicked="VerBtn_Clicked" BackgroundColor="Green"
+                    TextColor="White" FontAttributes="Bold" CornerRadius="50" />
+                <Button Text="Guardar" x:Name="GuardarBtn" Clicked="GuardarBtn_Clicked" BackgroundColor="Green"
+                    TextColor="White" FontAttributes="Bold" CornerRadius="50" />
+                <Label Text=" &#10; &#10;"/>
+            </StackLayout>
+           
+
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

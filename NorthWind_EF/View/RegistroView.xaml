@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" BackgroundColor="#609d00"
+             x:Class="NorthWind_EF.View.RegistroView">
+    
+    <NavigationPage.TitleView >
+        <SearchBar x:Name="Buscador" Placeholder="Inserte Id" TextColor="White" FontAttributes="Bold" 
+                           BackgroundColor="Transparent"/>
+    </NavigationPage.TitleView>
+    
+    <ContentPage.Content>
+
+        <StackLayout>
+
+            <ListView x:Name="CategoriaLV" ItemSelected="CategoriaLV_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding NameC}" Detail="{Binding IdC}" TextColor="White" DetailColor="White"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+
+            <ListView x:Name="ProductosLV">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding NombreProducto}" Detail="{Binding IdC}" TextColor="White" DetailColor="White"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <StackLayout Orientation="Horizontal" VerticalOptions="Start" HorizontalOptions="Center" Padding="50,0,50,10">
+                <Button Text="Ver Categorias" x:Name="VerCat" Clicked="VerCat_Clicked" BackgroundColor="Green"
+                        TextColor="White" FontAttributes="Bold" CornerRadius="50" />
+                
+                <Button Text="Añadir Más" x:Name="AñadirBtn" Clicked="AñadirBtn_Clicked" BackgroundColor="Green"
+                        TextColor="White" FontAttributes="Bold" CornerRadius="50" />
+                <Label Text="&#10; &#10;"/>
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
